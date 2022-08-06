@@ -1,5 +1,5 @@
 <template>
-  <div class="all-matches" v-if="matchStore.matches.length">
+  <div class="p-6" v-if="matchStore.matches.length">
     <n-table>
       <tr>
         <th>Player 1</th>
@@ -41,15 +41,4 @@ const matchStore = useMatchStore();
 const playerStore = usePlayerStore();
 </script>
 
-<style scoped>
-input {
-  color: rgba(255, 255, 255, 0.82);
-  height: 34px;
-  outline-color: rgba(255, 255, 255, 0.82);
-  caret-color: rgb(99, 226, 183);
-  background: rgba(0, 0, 0, 0);
-}
-.all-matches {
-  padding: 3rem;
-}
-</style>
+<style scoped></style>
