@@ -14,27 +14,36 @@ export default defineStore('match', {
     } as MatchStore),
   getters: {},
   actions: {
-    generateMatches() {
+    generateMatches(newPlayer: Player) {
       const playerStore = usePlayerStore();
 
-      this.matches = [];
-      playerStore.players.forEach((firstPlayer, index) => {
-        playerStore.players.forEach(secondPlayer => {
-          if (firstPlayer !== secondPlayer) {
-            this.matches.push({
-              id: uuidv4(),
-              firstPlayer,
-              secondPlayer,
-              goalsPlayer1: null,
-              goalsPlayer2: null,
-            });
-          }
-        });
+      playerStore.players.forEach(player => {
+        if (newPlayer.id !== player.id) {
+          this.matches.push({
+            id: uuidv4(),
+            firstPlayer: newPlayer,
+            secondPlayer: player,
+            goalsPlayer1: null,
+            goalsPlayer2: null,
+          });
+        }
       });
+    },
+    generateReturnMatches() {
+      const returnMatches = JSON.parse(JSON.stringify(this.matches));
+      returnMatches.forEach((match: Match) => {
+        match.id = uuidv4();
+        match.goalsPlayer1 = null;
+        match.goalsPlayer2 = null;
+      });
+      this.matches = [...this.matches, ...returnMatches];
+    },
+    removeReturnMatches() {
+      this.matches = this.matches.slice(0, this.matches.length / 2);
     },
     findPlayer(player: Player) {
       const playerStore = usePlayerStore();
-      return playerStore.players.find(p => p === player);
+      return playerStore.players.find(p => p.id === player.id);
     },
     clearPoints() {
       const playerStore = usePlayerStore();
@@ -45,9 +54,7 @@ export default defineStore('match', {
     calcPoints() {
       this.clearPoints();
       for (const match of this.matches) {
-        console.log('nm', match);
         if (match.goalsPlayer1 === null || match.goalsPlayer2 === null) {
-          console.log('hi');
           continue;
         }
         const player1 = this.findPlayer(match.firstPlayer);

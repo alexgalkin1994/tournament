@@ -15,17 +15,17 @@ export default defineStore('player', {
     allPlayers: state => state.players,
   },
   actions: {
-    generateMatches() {
+    generateMatches(player: Player) {
       const matchStore = useMatchStore();
-      matchStore.generateMatches();
+      matchStore.generateMatches(player);
     },
     addPlayer(player: Player) {
       this.players.push(player);
-      this.generateMatches();
+      this.generateMatches(player);
     },
     removePlayer(player: Player) {
       this.players = this.players.filter(p => p !== player);
-      this.generateMatches();
+      this.generateMatches(player);
     },
   },
   //   persist: true,

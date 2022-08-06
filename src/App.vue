@@ -3,6 +3,7 @@ import AddPlayer from './components/AddPlayer.vue';
 import PlayerList from './components/PlayerList.vue';
 import AllMatches from './components/AllMatches.vue';
 import { darkTheme, NConfigProvider, NGlobalStyle } from 'naive-ui';
+import MatchSettings from './components/MatchSettings.vue';
 
 const players = [];
 </script>
@@ -12,6 +13,7 @@ const players = [];
     <div class="app">
       <div class="player">
         <AddPlayer />
+        <MatchSettings />
       </div>
       <AllMatches />
     </div>
