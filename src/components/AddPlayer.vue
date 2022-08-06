@@ -16,7 +16,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import PlayerList from './PlayerList.vue';
 import usePlayerStore from '../store/player';
 import { Player } from '../types';
 import { NButton, NInput, NInputGroup } from 'naive-ui';
