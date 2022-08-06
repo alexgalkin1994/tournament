@@ -9,7 +9,7 @@
         <td>{{ match.secondPlayer.name }}</td>
         <td>
           <n-input-number
-            @input="matchStore.calcPoints"
+            @input="matchStore.calcStats"
             v-model:value="match.goalsPlayer1"
             placeholder=""
             :min="0"
@@ -20,7 +20,7 @@
 
         <td>
           <n-input-number
-            @input="matchStore.calcPoints"
+            @input="matchStore.calcStats"
             v-model:value="match.goalsPlayer2"
             placeholder=""
             :min="0"
