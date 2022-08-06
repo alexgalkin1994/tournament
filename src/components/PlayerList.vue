@@ -4,6 +4,7 @@
       <th>Name</th>
       <th>Points</th>
       <th>Goals</th>
+      <th>Actions</th>
     </tr>
     <PlayerListRow
       v-for="(player, index) in playerStore.orderedByPoints"
@@ -22,4 +23,4 @@ import PlayerListRow from './PlayerListRow.vue';
 const playerStore = usePlayerStore();
 </script>
 
-<style scoped></style>
+<style></style>

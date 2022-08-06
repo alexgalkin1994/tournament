@@ -1,15 +1,16 @@
 <template>
-  <div class="add-player">
-    <n-input-group class="mb-8">
+  <div class="flex flex-col">
+    <n-input-group>
       <n-input
+        class="text-left"
         type="text"
         v-model:value="player.name"
-        placeholder="Your Name"
+        placeholder="Name"
         @keyup.enter="addPlayer"
+        autofocus
       />
       <n-button @click="addPlayer">Add</n-button>
     </n-input-group>
-    <PlayerList />
   </div>
 </template>
 
@@ -38,9 +39,4 @@ const addPlayer = () => {
 };
 </script>
 
-<style scoped>
-.add-player {
-  display: flex;
-  flex-direction: column;
-}
-</style>
+<style scoped></style>

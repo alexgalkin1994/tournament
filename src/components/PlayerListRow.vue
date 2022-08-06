@@ -1,11 +1,11 @@
 <template>
-  <tr>
+  <tr class="player-list-row">
     <td class="player-name">{{ player.name }}</td>
     <td>{{ player.points }}</td>
     <td>{{ player.goals }}</td>
     <td>
-      <n-button @click="removePlayer">
-        <TrashIcon class="h-5 w-5 text-white-500"
+      <n-button @click="removePlayer" class="remove-btn">
+        <TrashIcon class="remove-btn h-5 w-5 text-white-500"
       /></n-button>
     </td>
   </tr>
@@ -29,8 +29,15 @@ const removePlayer = () => {
 };
 </script>
 
-<style scoped>
+<style>
 .player-name {
   text-transform: capitalize;
+}
+
+.remove-btn {
+  visibility: hidden;
+}
+.player-list-row:hover .remove-btn {
+  visibility: visible;
 }
 </style>

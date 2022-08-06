@@ -14,12 +14,14 @@
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 1440px;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }

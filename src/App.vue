@@ -10,19 +10,20 @@ const players = [];
 
 <template>
   <n-config-provider :theme="darkTheme">
-    <div class="app">
+    <div class="app flex justify-between mt-12">
       <div class="player">
+        <PlayerList />
+      </div>
+
+      <AllMatches class="mx-8" />
+      <div class="config">
         <AddPlayer />
         <MatchSettings />
       </div>
-      <AllMatches />
     </div>
+
     <n-global-style />
   </n-config-provider>
 </template>
 
-<style>
-.app {
-  display: flex;
-}
-</style>
+<style></style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="pl-12" v-if="matchStore.matches.length">
+  <div v-if="matchStore.matches.length">
     <n-table>
       <tr v-for="(match, index) in matchStore.matches" :key="index">
-        <td>{{ match.firstPlayer.name }}</td>
+        <td class="player-name">{{ match.firstPlayer.name }}</td>
         <td>
           <span>vs.</span>
         </td>
-        <td>{{ match.secondPlayer.name }}</td>
+        <td class="player-name">{{ match.secondPlayer.name }}</td>
         <td>
           <n-input-number
             @input="matchStore.calcStats"
@@ -30,6 +30,9 @@
         </td>
       </tr>
     </n-table>
+  </div>
+  <div v-else>
+    <span class="text-3xl uppercase text-gray-400">Not enough people yet!</span>
   </div>
 </template>
 

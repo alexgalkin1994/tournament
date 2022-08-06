@@ -33,5 +33,4 @@ export default defineStore('player', {
       this.generateMatches(player);
     },
   },
-  //   persist: true,
 });
