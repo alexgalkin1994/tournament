@@ -12,7 +12,7 @@ export default defineStore('player', {
       players: [],
     } as PlayerStore),
   getters: {
-    allPlayers: state => state.players,
+    orderedByPoints: state => state.players.sort((a, b) => b.points - a.points),
   },
   actions: {
     generateMatches(player: Player) {

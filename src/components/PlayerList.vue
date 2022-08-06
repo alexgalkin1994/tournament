@@ -6,7 +6,7 @@
       <th>Goals</th>
     </tr>
     <PlayerListRow
-      v-for="(player, index) in orderedByPoints"
+      v-for="(player, index) in playerStore.orderedByPoints"
       :key="index"
       :player="player"
     />
@@ -20,10 +20,6 @@ import usePlayerStore from '../store/player';
 import PlayerListRow from './PlayerListRow.vue';
 
 const playerStore = usePlayerStore();
-
-const orderedByPoints = computed(() =>
-  playerStore.players.sort((a, b) => b.points - a.points)
-);
 </script>
 
 <style scoped></style>

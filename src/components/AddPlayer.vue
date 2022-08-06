@@ -5,6 +5,7 @@
         type="text"
         v-model:value="player.name"
         placeholder="Your Name"
+        @keyup.enter="addPlayer"
       />
       <n-button @click="addPlayer">Add</n-button>
     </n-input-group>
