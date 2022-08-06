@@ -12,7 +12,12 @@ export default defineStore('player', {
       players: [],
     } as PlayerStore),
   getters: {
-    orderedByPoints: state => state.players.sort((a, b) => b.points - a.points),
+    orderedByPoints: state => {
+      return state.players.sort((a: Player, b: Player) => {
+        if (a.points === b.points) return b.goals - a.goals;
+        return b.points - a.points;
+      });
+    },
   },
   actions: {
     generateMatches(player: Player) {

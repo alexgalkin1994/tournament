@@ -58,7 +58,6 @@ export default defineStore('match', {
       }
     },
     calcStats() {
-      console.log('calc stats..');
       this.calcPoints();
       this.calcGoals();
     },
@@ -70,10 +69,6 @@ export default defineStore('match', {
         }
         const firstPlayer = this.findPlayer(match.firstPlayer.id);
         const secondPlayer = this.findPlayer(match.secondPlayer.id);
-
-        console.log('playerg', match.goalsPlayer1, match.goalsPlayer2);
-        console.log('firstPlayer', firstPlayer);
-        console.log('secondPlayer', secondPlayer);
 
         if (!firstPlayer || !secondPlayer) return;
 
