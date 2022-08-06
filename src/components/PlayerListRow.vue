@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td>{{ player.name }}</td>
+    <td class="player-name">{{ player.name }}</td>
     <td>{{ player.points }}</td>
     <td>{{ player.goals }}</td>
     <td>
@@ -29,4 +29,8 @@ const removePlayer = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.player-name {
+  text-transform: capitalize;
+}
+</style>
