@@ -33,7 +33,7 @@
   </div>
   <div v-else>
     <span class="text-3xl uppercase text-gray-400"
-      >Not enough people yet! CI CD TEST!!!!</span
+      >Not enough people yet! CI CD TEST!</span
     >
   </div>
 </template>
