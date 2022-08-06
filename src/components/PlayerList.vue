@@ -3,6 +3,7 @@
     <tr>
       <th>Name</th>
       <th>Points</th>
+      <th>Goals</th>
     </tr>
     <PlayerListRow
       v-for="(player, index) in playerStore.players"

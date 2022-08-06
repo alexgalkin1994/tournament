@@ -2,6 +2,7 @@
   <tr>
     <td>{{ player.name }}</td>
     <td>{{ player.points }}</td>
+    <td>{{ player.goals }}</td>
     <td>
       <n-button @click="removePlayer">
         <TrashIcon class="h-5 w-5 text-white-500"

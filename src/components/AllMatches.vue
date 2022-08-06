@@ -1,14 +1,11 @@
 <template>
-  <div class="p-6" v-if="matchStore.matches.length">
+  <div class="pl-12" v-if="matchStore.matches.length">
     <n-table>
-      <tr>
-        <th>Player 1</th>
-        <th>Player 2</th>
-        <th>Goals Player 1</th>
-        <th>Goals Player 2</th>
-      </tr>
       <tr v-for="(match, index) in matchStore.matches" :key="index">
         <td>{{ match.firstPlayer.name }}</td>
+        <td>
+          <span>vs.</span>
+        </td>
         <td>{{ match.secondPlayer.name }}</td>
         <td>
           <n-input-number
@@ -16,14 +13,19 @@
             v-model:value="match.goalsPlayer1"
             placeholder=""
             :min="0"
+            :show-button="false"
+            class="w-10"
           />
         </td>
+
         <td>
           <n-input-number
             @input="matchStore.calcPoints"
             v-model:value="match.goalsPlayer2"
             placeholder=""
             :min="0"
+            :show-button="false"
+            class="w-10"
           />
         </td>
       </tr>

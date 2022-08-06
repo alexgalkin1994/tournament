@@ -39,6 +39,5 @@ const addPlayer = () => {
 .add-player {
   display: flex;
   flex-direction: column;
-  padding: 3rem;
 }
 </style>

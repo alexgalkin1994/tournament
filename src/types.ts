@@ -9,4 +9,5 @@ export type Match = {
 export type Player = {
   name: string;
   points: number;
+  goals: number;
 };

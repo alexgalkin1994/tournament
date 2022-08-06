@@ -23,8 +23,4 @@ const players = [];
 .app {
   display: flex;
 }
-
-.player {
-  margin-right: 5rem;
-}
 </style>
