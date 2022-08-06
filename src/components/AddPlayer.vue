@@ -38,5 +38,3 @@ const addPlayer = () => {
   player.value.name = '';
 };
 </script>
-
-<style scoped></style>
