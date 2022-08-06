@@ -32,9 +32,7 @@
     </n-table>
   </div>
   <div v-else>
-    <span class="text-3xl uppercase text-gray-400"
-      >Not enough people yet! CI CD TEST!</span
-    >
+    <span class="text-3xl uppercase text-gray-400">Not enough people yet!</span>
   </div>
 </template>
 
